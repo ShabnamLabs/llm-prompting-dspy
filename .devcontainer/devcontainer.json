@@ -12,7 +12,11 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pip install -r requirements.txt"
+	"postCreateCommand": "pip install -r requirements.txt",
+	
+	"containerEnv": {
+        "PYTHONPATH": "/workspaces/llm-prompting-dspy"
+    }
 
 	// Configure tool-specific properties.
 	// "customizations": {},
