@@ -1,7 +1,7 @@
-# KNN Few-Shot Prompting with DSPy
+# LLM Prompting with DSPy
 
-This project shows how to use Stanford's [DSPy](https://github.com/stanfordnlp/dspy) for dynamic few-shot prompting with KNN-based retrieval.  
-Few-shot examples are selected at runtime using semantic similarity, making prompt construction flexible and adaptive.
+This project demonstrates how to use Stanford's [DSPy](https://github.com/stanfordnlp/dspy) for dynamic few-shot prompting with KNN-based retrieval and prompt optimization.  
+It includes modular pipelines and demo notebooks for both general few-shot retrieval and healthcare chatbot prompt optimization.
 
 ---
 
@@ -15,12 +15,12 @@ Few-shot examples are selected at runtime using semantic similarity, making prom
 
 2. **Install dependencies**
     ```bash
-    pip install -r requirements.txt
+    pip3 install -r requirements.txt
     ```
 
-3. **Run the demo notebook**
-    - Open `knn_fewshot_demo.ipynb` in VS Code or Jupyter.
-    - Follow the steps to load data, compile the DSPy pipeline, and run inference.
+3. **Run the demo notebooks**
+    - Open `demos/knn_fewshot/knn_fewshot_demo.ipynb` for KNN-based few-shot prompting.
+    - Open `demos/prompt_optimization/prompt_optimization_demo.ipynb` for prompt optimization in a healthcare chatbot scenario.
 
 ---
 
@@ -30,11 +30,21 @@ Few-shot examples are selected at runtime using semantic similarity, making prom
 knn-fewshot-prompting-dspy/
 ├── README.md
 ├── requirements.txt
-├── knn_fewshot_demo.ipynb
+├── demos/
+│   ├── knn_fewshot/
+│   │   ├── knn_fewshot_demo.ipynb
+│   │   └── data/
+│   │       └── examples.json
+│   └── prompt_optimization/
+│       ├── prompt_optimization_demo.ipynb
+│       └── data/
+│           ├── train_examples.json
+│           └── val_examples.json
 ├── src/
-│   └── knn_pipeline.py
-└── data/
-    └── examples.json
+│   ├── knn_pipeline.py
+│   └── prompt_optimization_pipeline.py
+└── .devcontainer/
+    └── devcontainer.json
 ```
 
 ---
@@ -42,7 +52,10 @@ knn-fewshot-prompting-dspy/
 ## About DSPy
 
 DSPy is a framework for building modular, compositional pipelines for language model applications.  
-This repo demonstrates how to use DSPy signatures and modules with KNN-based few-shot retrieval for more robust prompting.
+This repo demonstrates how to use DSPy signatures and modules with KNN-based few-shot retrieval and prompt optimization for robust prompting.
+
+- **KNN Few-Shot Demo:** Shows dynamic selection of few-shot examples using semantic similarity.
+- **Prompt Optimization Demo:** Uses DSPy and MIPROv2 to optimize prompts for safety and helpfulness in healthcare chatbot responses.
 
 For more, see [DSPy on GitHub](https://github.com/stanfordnlp/dspy).
 
